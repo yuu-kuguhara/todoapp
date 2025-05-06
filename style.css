@@ -1,0 +1,105 @@
+html {
+    font-size: 16px;
+}
+
+body, html {
+    max-width: 960px;
+    margin: 1rem auto;
+    font-family: serif;
+    padding: 0 1rem;
+}
+
+form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.task_value {
+    height: 1.5rem;
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1); /* 入力欄やボタン、タスクカードに軽い影を追加 */
+    transition: box-shadow 0.3s; /* transition→アニメーションのようにスムーズに変化 */
+}
+
+.task_value:focus {
+    outline: none;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.task_submit {
+    height: 2rem;
+    padding: 0 1rem;
+    background-color: #f9a825;
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer; /* ホバー時にマウスポインタ―を変化させ「クリックできる」感を演出 */
+    transition: background-color 0.3s;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task_submit:hover { /* ホバー時（マウスが乗った時）に色が変わる */
+    background-color: #f57f17;
+}
+
+#table {
+    background-color: papayawhip;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+li {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+li:hover {
+    transform: scale(1.02); /* カードを少し拡大してクリックしたくなるように */
+}
+
+/* レスポンシブ対応 */
+@media(max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    .task_value,
+    .task_submit {
+        width: 100%;
+    }
+
+    .task_submit {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
